@@ -376,6 +376,9 @@ do
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
   }
+  vim.opt.termguicolors = true
+  vim.pack.add { gh 'norcalli/nvim-colorizer.lua' }
+  require('colorizer').setup()
 
   -- [[ Colorscheme ]]
   -- You can easily change to a different colorscheme.
@@ -396,7 +399,6 @@ do
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  vim.opt.termguicolors = true
   vim.cmd.colorscheme 'gruvbox'
 
   -- Highlight todo, notes, etc in comments
@@ -757,6 +759,8 @@ do
   vim.list_extend(ensure_installed, {
     -- You can add other tools here that you want Mason to install
     'markdownlint',
+    'mypy',
+    'pylint',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
